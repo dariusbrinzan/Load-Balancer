@@ -1,0 +1,28 @@
+Brinzan Darius-Ionut, 312CA, Tema2
+
+Am avut de implementat 2 fisiere load_balancer.c, server.c
+
+Server.c:
+	In cadrul acestui fisier am implementat toate functiile utile pentru a realiza
+	un server cu ajutorul a 9 functii.
+	init_server_memory : initializez memoria serverului folosing un calloc
+	create_new_item : aici creez un item pentru serverul meu
+	create_new_node : functie care imi creeaza un nou nod
+	server_store : functia care imi face store pe serverul meu
+	free_ht_node : functia in care dau free la toate nodurile
+	server_remove : functia prin care dau remove unui key din server
+	server_retrieve : functia de retrieve a serverului
+	free_ht_list : functia prin care dau free listei mele
+	free_server_memory : functia prin care dau free memoriei serverului 
+Load_balancer.c:
+	In cadrul acestui fisier am implementat functiile de load balancer .
+	init_load_balancer : initializarea memoriei pentru load balancer
+	loader_store : caut binar hash-ul serverului in hashring si dupa stochez
+	key,value in serverul respectiv
+	loader_retrieve : caut binar hash-ul serverului in hashring si dupa caut
+	in hashtable-ul serverului dupa key
+	loader_add_server : adaug serverul si cele 2 copii ale sale pe hashring si 
+	preiau din load-ul serverului din fata de pe hashring .
+	loader_remove_server : sterg un server din hashring si load-ul lui il reatribui
+	pe unele servere de pe hashring si dupa sterg din memorie serverul
+	free_load_balancer : dau free la balancer si serverele aferente
